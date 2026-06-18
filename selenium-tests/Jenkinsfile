@@ -3,6 +3,7 @@ pipeline {
 
     environment {
         PATH = "/Users/hanshikaanchan/.nvm/versions/node/v23.7.0/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:${env.PATH}"
+        JENKINS_NODE_COOKIE = 'dontKillMe'
     }
 
     stages {
@@ -13,12 +14,12 @@ pipeline {
                     // Build & start backend in background
                     dir('app/backend') {
                         sh 'npm install'
-                        sh 'npm start &'
+                        sh 'nohup npm start > backend.log 2>&1 &'
                     }
                     // Build & start frontend in background
                     dir('app/frontend') {
                         sh 'npm install'
-                        sh 'npm run dev &'
+                        sh 'nohup npm run dev > frontend.log 2>&1 &'
                     }
                     // Wait for the servers to spin up
                     sh 'sleep 10'
@@ -43,7 +44,7 @@ pipeline {
             sh 'pkill -f "vite" || true'
             
             // Publish TestNG Results for TestNG Reports Analyzer dashboard integration
-            testng pattern: 'selenium-tests/target/surefire-reports/testng-results.xml'
+            testNG pattern: 'selenium-tests/target/surefire-reports/testng-results.xml'
         }
     }
 }
