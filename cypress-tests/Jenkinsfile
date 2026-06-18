@@ -4,6 +4,7 @@ pipeline {
     environment {
         PATH = "/Users/hanshikaanchan/.nvm/versions/node/v23.7.0/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:${env.PATH}"
         JENKINS_NODE_COOKIE = 'dontKillMe'
+        PORT = '5001'
     }
 
     stages {
