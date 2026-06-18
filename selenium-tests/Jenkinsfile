@@ -44,7 +44,7 @@ pipeline {
             sh 'pkill -f "vite" || true'
             
             // Publish TestNG Results for TestNG Reports Analyzer dashboard integration
-            testNG pattern: 'selenium-tests/target/surefire-reports/testng-results.xml'
+            testNG reportFilenamePattern: 'selenium-tests/target/surefire-reports/testng-results.xml'
         }
     }
 }
