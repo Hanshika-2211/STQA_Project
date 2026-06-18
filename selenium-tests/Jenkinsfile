@@ -1,0 +1,45 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Install App Dependencies & Start Services') {
+            steps {
+                script {
+                    echo 'Installing backend and frontend dependencies...'
+                    // Build & start backend in background
+                    dir('app/backend') {
+                        sh 'npm install'
+                        sh 'npm start &'
+                    }
+                    // Build & start frontend in background
+                    dir('app/frontend') {
+                        sh 'npm install'
+                        sh 'npm run dev &'
+                    }
+                    // Wait for the servers to spin up
+                    sh 'sleep 10'
+                }
+            }
+        }
+
+        stage('Run Selenium Tests') {
+            steps {
+                dir('selenium-tests') {
+                    // Run Maven test suite
+                    sh 'mvn clean test'
+                }
+            }
+        }
+    }
+
+    post {
+        always {
+            // Kill background services to free up ports
+            sh 'pkill -f "node server.js" || true'
+            sh 'pkill -f "vite" || true'
+            
+            // Publish TestNG Results for TestNG Reports Analyzer dashboard integration
+            testng pattern: 'selenium-tests/target/surefire-reports/testng-results.xml'
+        }
+    }
+}

@@ -1,0 +1,63 @@
+[Product]
+Name: Fresh Organic Strawberries
+Category: Fruits & Vegetables
+Price: 4.99
+Description: Sweet, juicy, and freshly picked organic strawberries. Perfect for snacks, salads, or smoothies.
+Image: https://images.unsplash.com/photo-1464965911861-746a04b4bca6?w=600&auto=format&fit=crop&q=80
+Stock: 50
+
+[Product]
+Name: Fresh Hass Avocados
+Category: Fruits & Vegetables
+Price: 3.99
+Description: Creamy, ripe Hass avocados. Rich in healthy fats and perfect for making delicious homemade guacamole.
+Image: https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?w=600&auto=format&fit=crop&q=80
+Stock: 40
+
+[Product]
+Name: Artisanal Sourdough Bread
+Category: Bakery
+Price: 4.49
+Description: Freshly baked sourdough loaf with a crispy crust and soft, airy interior. Baked daily.
+Image: https://images.unsplash.com/photo-1549931319-a545dcf3bc73?w=600&auto=format&fit=crop&q=80
+Stock: 15
+
+[Product]
+Name: Premium Glazed Donuts
+Category: Bakery
+Price: 5.29
+Description: A pack of 4 soft, pillowy glazed donuts with a sweet melt-in-your-mouth sugar coating.
+Image: https://images.unsplash.com/photo-1551024601-bec78aea704b?w=600&auto=format&fit=crop&q=80
+Stock: 25
+
+[Product]
+Name: Organic Cold Brew Coffee
+Category: Beverages
+Price: 3.49
+Description: Smooth and refreshing cold brew coffee made from 100% organic Arabica beans. No added sugar.
+Image: https://images.unsplash.com/photo-1517701604599-bb29b565090c?w=600&auto=format&fit=crop&q=80
+Stock: 60
+
+[Product]
+Name: Organic Oat Milk (1L)
+Category: Beverages
+Price: 2.99
+Description: Creamy, lactose-free plant milk made from organic oats. Perfect for coffee, cereal, or drinking straight.
+Image: https://images.unsplash.com/photo-1563822249548-9a72b6353cd1?w=600&auto=format&fit=crop&q=80
+Stock: 35
+
+[Product]
+Name: Kettle Cooked Sea Salt Chips
+Category: Snacks
+Price: 1.89
+Description: Extra crunchy kettle-cooked potato chips seasoned with natural sea salt. Gluten-free.
+Image: https://images.unsplash.com/photo-1566478989037-eec170784d0b?w=600&auto=format&fit=crop&q=80
+Stock: 80
+
+[Product]
+Name: Raw Salted Almonds
+Category: Snacks
+Price: 6.49
+Description: Premium quality raw almonds, lightly salted and roasted to perfection. A great source of protein and energy.
+Image: https://images.unsplash.com/photo-1508061253366-f7da158b6d96?w=600&auto=format&fit=crop&q=80
+Stock: 45
