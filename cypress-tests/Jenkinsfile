@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    environment {
+        PATH = "/Users/hanshikaanchan/.nvm/versions/node/v23.7.0/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:${env.PATH}"
+    }
+
     stages {
         stage('Install App Dependencies & Start Services') {
             steps {
