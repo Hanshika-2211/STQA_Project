@@ -191,8 +191,8 @@ export default function App() {
 
   // Review Submitted Callback
   const handleReviewSubmitted = (updatedProduct) => {
-    // 1. Update the product detail modal state if open
-    setSelectedProduct(updatedProduct);
+    // 1. Update the product detail modal state if open (do not reopen if closed)
+    setSelectedProduct(prev => prev ? updatedProduct : null);
 
     // 2. Update the product in the local state catalog list
     setProducts(prevProducts => 

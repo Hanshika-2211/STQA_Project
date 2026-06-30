@@ -191,8 +191,9 @@ public class QuickCommerceTest {
         submitReviewBtn.click();
 
         // Verify review exists in modal
-        WebElement reviewCard = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[data-cy='review-card']")));
-        Assert.assertTrue(reviewCard.getText().contains("hanshika Test"));
+        WebElement reviewCard = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
+                "//div[@data-cy='review-card' and .//span[@data-cy='review-user' and contains(text(), 'hanshika Test')]]"
+        )));
         Assert.assertTrue(reviewCard.getText().contains("These strawberries are fresh"));
 
         // Close details modal

@@ -70,17 +70,19 @@ describe('QuickCommerce E2E Test Suite', () => {
     cy.get('[data-cy="product-detail-modal"]').should('be.visible');
 
     // Submit review
+    const uniqueComment = `These strawberries are fresh and sweet. Will buy again! ${Date.now()}`;
     cy.get('[data-cy="star-4"]').click();
-    cy.get('[data-cy="input-comment"]').type('These strawberries are fresh and sweet. Will buy again!');
+    cy.get('[data-cy="input-comment"]').type(uniqueComment);
     cy.get('[data-cy="btn-submit-review"]').click();
 
     // Verify review was added
     cy.get('[data-cy="review-card"]').should('have.length.at.least', 1);
     cy.get('[data-cy="review-user"]').should('contain', 'Hanshika Test');
-    cy.get('[data-cy="review-comment"]').should('contain', 'These strawberries are fresh');
+    cy.get('[data-cy="review-comment"]').should('contain', uniqueComment);
 
     // Close details modal
     cy.get('[data-cy="product-detail-modal"]').find('.modal-close-btn').click();
+    cy.get('[data-cy="product-detail-modal"]').should('not.exist');
   });
 
   it('Flow 6: Checkout & Purchase', () => {
